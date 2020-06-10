@@ -1,0 +1,128 @@
+openapi: 3.0.0
+info:
+  description: playground
+  version: 1.0.0
+  title: playground
+servers:
+- url:  /playground-api
+security:
+- basic: [
+    ]
+tags:
+- name: thing
+paths:
+  /thing:
+    get:
+      description: retrieves all things
+      tags:
+      - thing
+      operationId: getThings
+      parameters:
+      - name: name
+        in: query
+        description: name of the thing
+        schema:
+          type: string
+      responses:
+        200:
+          description: successful response, with a representation of all things
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/thing'
+        500:
+          $ref: '#/components/responses/Error'
+    post:
+      description: create a new thing
+      tags:
+      - thing
+      operationId: createThing
+      responses:
+        200:
+          description: ok
+        500:
+          $ref: '#/components/responses/Error'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/thing'
+        description: new thing
+        required: true
+  /thing/{id}:
+    parameters:
+    - name: id
+      in: path
+      description: id of the requested thing
+      required: true
+      schema:
+        type: integer
+        format: int64
+    get:
+      description: retrieves the thing with the specified id
+      tags:
+      - thing
+      operationId: getThing
+      responses:
+        200:
+          description: successful response, with a representation of the thing
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/thing'
+        404:
+          description: The requested thing was not found.
+        500:
+          $ref: '#/components/responses/Error'
+    put:
+      description: changes the state of the thing with the specified id
+      tags:
+      - thing
+      operationId: changeThing
+      responses:
+        200:
+          description: ok
+        500:
+          $ref: '#/components/responses/Error'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/thing'
+        description: updated thing
+        required: true
+components:
+  responses:
+    Error:
+      description: internal server error
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/error'
+  securitySchemes:
+    basic:
+      type: http
+      scheme: basic
+  schemas:
+    thing:
+      type: object
+      required:
+      - id
+      properties:
+        id:
+          type: integer
+          format: int64
+          readOnly: true
+        name:
+          type: string
+    error:
+      type: object
+      properties:
+        code:
+          type: string
+        message:
+          type: string
+        details:
+          type: string
