@@ -341,6 +341,10 @@
   <!-- Resources -->
   <h2>Resources</h2>
   <p>Here are some links to help you get started:</p>
+  
+  <div *ngFor="let thing of $things | async">
+    <p>Thing: {{thing.name}}</p>
+  </div>
 
   <div class="card-container">
     <a class="card" target="_blank" rel="noopener" href="https://angular.io/tutorial">
