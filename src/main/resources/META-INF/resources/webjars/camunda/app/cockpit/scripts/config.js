@@ -15,35 +15,29 @@
  * limitations under the License.
  */
 
-window.camCockpitConf = {
-  // // custom libraries and scripts loading and initialization,
-  // // see: http://docs.camunda.org/guides/user-guide/#tasklist-customizing-custom-scripts
-  // customScripts: {
-  //   // AngularJS module names
-  //   ngDeps: ['ui.bootstrap'],
-  //   // RequireJS configuration for a complete configuration documentation see:
-  //   // http://requirejs.org/docs/api.html#config
-  //   deps: ['jquery', 'custom-ui'],
-  //   paths: {
-  //     // if you have a folder called `custom-ui` (in the `cockpit` folder)
-  //     // with a file called `scripts.js` in it and defining the `custom-ui` AMD module
-  //     'custom-ui': 'custom-ui/scripts'
-  //   }
-  // },
-  // historicActivityInstanceMetrics: {
-  //   adjustablePeriod: true,
-  //   //select from the default time period: today, week, month, complete
-  //   period: {
-  //     unit: 'week'
-  //   }
-  // },
-  // set if a user can change the default or no
-  // userCanChangePeriod: true/false
-  // },
-  'locales': {
-    'availableLocales': ['en', 'de'],
-    'fallbackLocale': 'en'
+export default {
+  // customScripts: [
+  //   // If you have a folder called 'my-custom-script' (in the 'cockpit' folder)
+  //   // with a file called 'customScript.js' in it
+  //   // 'my-custom-script/customScript'
+  // ],
+  locales: {
+    availableLocales: ['en', 'de'],
+    fallbackLocale: 'en'
   },
+  // csrfCookieName: 'XSRF-TOKEN',
+  // bpmnJs: {
+  //   additionalModules: [
+  //     // If you have a folder called 'my-custom-module' (in the 'cockpit' folder)
+  //     // with a file called 'module.js' in it
+  //     // 'my-custom-module/module'
+  //   ],
+  //   moddleExtensions: {
+  //     // If you have a folder called 'my-custom-moddle' (in the 'cockpit' folder)
+  //     // with a file called 'camunda.json' in it defining the 'camunda' moddle extension
+  //     // camunda: 'my-custom-moddle/camunda'
+  //   }
+  // },
   // skipCustomListeners: {
   //   default: true,
   //   hidden: false
@@ -52,22 +46,22 @@ window.camCockpitConf = {
   //   default: true,
   //   hidden: false
   // },
-  // 'batchOperation' : {
-  //   // select mode of query for process instances or decision instances
-  //   // possible values: filter, search
-  //   'mode': 'filter'
+  // runtimeActivityInstanceMetrics: {
+  //   display: true
   // },
-  // bpmnJs: {
-  //   moddleExtensions: {
-  //     // if you have a folder called 'my-custom-moddle' (in the 'cockpit' folder)
-  //     // with a file called 'camunda.json' in it defining the 'camunda' moddle extension
-  //     camunda: 'my-custom-moddle/camunda'
-  //   },
-  //   additionalModules: {
-  //     // if you have a folder called 'my-custom-module' (in the 'cockpit' folder)
-  //     // with a file called 'module.js' in it defining the 'my-custom-module' AMD module
-  //     myCustomModule: 'my-custom-module/module'
+  // historicActivityInstanceMetrics: {
+  //   adjustablePeriod: true,
+  //   // Select from the default time period: day, week, month, complete
+  //   period: {
+  //     unit: 'week'
   //   }
+  // },
+  // batchOperation: {
+  //   // Select mode of query for process instances or decision instances
+  //   // possible values: filter, search
+  //   mode: 'filter',
+  //   // Select if Historic Batches should be loaded automatically when navigating to #/batch
+  //   autoLoadEnded: true
   // },
   // defaultFilter: {
   //   historicProcessDefinitionInstancesSearch: {
@@ -75,7 +69,6 @@ window.camCockpitConf = {
   //     event: 'started'
   //   }
   // },
-  // csrfCookieName: 'XSRF-TOKEN',
   // disableWelcomeMessage: false,
   // userOperationLogAnnotationLength: 4000
 };
