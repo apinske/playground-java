@@ -1,3 +1,5 @@
+src/main/frontend/node/
+src/main/frontend/node_modules/
 target/
 transaction-logs/
 .apt_generated
