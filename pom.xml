@@ -20,6 +20,7 @@
 
 	<!-- docker, xslfo, cxf, saxon? -->
 	<!-- liberty, groovy, hawt, oauth -->
+	<!-- greenmail -->
 
 	<dependencyManagement>
 		<dependencies>
@@ -54,23 +55,14 @@
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-data-rest</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
 
-		<dependency>
-			<groupId>org.springframework.data</groupId>
-			<artifactId>spring-data-rest-hal-explorer</artifactId>
-		</dependency>
 		<dependency>
 			<groupId>org.webjars</groupId>
 			<artifactId>swagger-ui</artifactId>
 			<version>3.36.2</version>
 		</dependency>
-
 		<dependency>
 			<groupId>org.webjars.bower</groupId>
 			<artifactId>camunda-bpm-sdk-js</artifactId>
@@ -197,45 +189,6 @@
 								<additionalProperty>interfaceOnly=true</additionalProperty>
 								<additionalProperty>skipDefaultInterface=true</additionalProperty>
 							</additionalProperties>
-						</configuration>
-					</execution>
-					<execution>
-						<id>playground-api-client</id>
-						<goals>
-							<goal>generate</goal>
-						</goals>
-						<configuration>
-							<generatorName>javascript</generatorName>
-							<inputSpec>${basedir}/src/main/resources/static/api.yaml</inputSpec>
-							<supportingFilesToGenerate>ApiClient.js,index.js</supportingFilesToGenerate>
-							<output>${project.build.directory}/generated-sources/openapi-client</output>
-							<generateApiTests>false</generateApiTests>
-							<generateModelTests>false</generateModelTests>
-							<generateApiDocumentation>false</generateApiDocumentation>
-							<generateModelDocumentation>false</generateModelDocumentation>
-							<additionalProperties>
-								<additionalProperty>useES6=false</additionalProperty>
-							</additionalProperties>
-						</configuration>
-					</execution>
-				</executions>
-			</plugin>
-			<plugin>
-				<artifactId>maven-resources-plugin</artifactId>
-				<executions>
-					<execution>
-						<id>copy-api-client</id>
-						<phase>process-resources</phase>
-						<goals>
-							<goal>copy-resources</goal>
-						</goals>
-						<configuration>
-							<outputDirectory>${project.build.outputDirectory}/static/playground-api-client/</outputDirectory>
-							<resources>
-								<resource>
-									<directory>${project.build.directory}/generated-sources/openapi-client/src/</directory>
-								</resource>
-							</resources>
 						</configuration>
 					</execution>
 				</executions>

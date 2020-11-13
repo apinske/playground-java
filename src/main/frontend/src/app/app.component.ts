@@ -12,7 +12,6 @@ export class AppComponent {
   title = 'playground-angular';
 
   $sites = [
-    { name: 'Data', link: '/playground-data' },
     { name: 'API', link: '/webjars/swagger-ui/index.html?url=/api.yaml' },
     { name: 'Camunda', link: '/camunda/app/cockpit/' },
     { name: 'Camunda API', link: '/camunda/rest/engine' },
