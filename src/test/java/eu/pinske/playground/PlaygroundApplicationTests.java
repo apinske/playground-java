@@ -40,7 +40,6 @@ class PlaygroundApplicationTests {
 				.andExpect(jsonPath("$[0].name").value("table")).andExpect(jsonPath("$[0].id").value(1));
 
 		mvc.perform(get("/playground-api/thing/1")).andExpect(status().isOk());
-		mvc.perform(get("/playground-data/things/1")).andExpect(status().isOk());
 	}
 
 	@Test
