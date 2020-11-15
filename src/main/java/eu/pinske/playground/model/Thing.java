@@ -34,5 +34,4 @@ public class Thing {
 	public String toString() {
 		return "Thing [id=" + id + ", name=" + name + "]";
 	}
-
 }
