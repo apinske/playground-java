@@ -25,20 +25,11 @@ jobs:
         path: ~/.m2
         key: ${{ runner.os }}-m2-${{ hashFiles('**/pom.xml') }}
         restore-keys: ${{ runner.os }}-m2
-    - name: Cache Maven Repo
+    - name: Cache Node
       uses: actions/cache@v2
       with:
-        path: src/main/frontend/node*
+        path: src/main/frontend/node_modules
         key: ${{ runner.os }}-node-${{ hashFiles('**/pom.xml') }}
         restore-keys: ${{ runner.os }}-node
     - name: Build with Maven
-      run: mvn -B package --file pom.xml
-    - name: Docker Login
-      uses: docker/login-action@v1.6.0
-      with:
-        username: ${{ secrets.DOCKERHUB_USERNAME }}
-        password: ${{ secrets.DOCKERHUB_TOKEN }}
-    - name: Tag Docker image
-      run: docker tag playground-java:0.1-SNAPSHOT apinske/playground-java
-    - name: Push Docker image
-      run: docker push apinske/playground-java
+      run: mvn -B spring-boot:build-image --file pom.xml -Dspring-boot.build-image.docker.publishRegistry.username=${{ secrets.DOCKERHUB_USERNAME }} -Dspring-boot.build-image.docker.publishRegistry.password=${{ secrets.DOCKERHUB_TOKEN }} -Dspring-boot.build-image.imageName=apinske/playground-java -Dspring-boot.build-image.publish=true
