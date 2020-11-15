@@ -12,13 +12,13 @@
 			<div>
 				<ul>
 					<li><i class="fas fa-inbox"></i></li>
+					<li *ngFor="let task of $tasks | async">
+						<span>{{task.name}}</span>
+					</li>
 					<li *ngFor="let thing of $things | async">
 						<span>{{thing.name}}</span>
 					</li>
-					<li *ngFor="let task of $tasks | async">
-						<!--  -->
-					</li>
-					<li>{{newThingName.value}}</li>
+					<li><i>{{newThingName.value}}</i></li>
 				</ul>
 				<input type="text" [formControl]="newThingName">
 				<button (click)="createNewThing()">Save</button>

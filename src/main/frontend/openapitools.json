@@ -1,7 +1,25 @@
 {
-  "$schema": "node_modules/@openapitools/openapi-generator-cli/config.schema.json",
+  "$schema": "./node_modules/@openapitools/openapi-generator-cli/config.schema.json",
   "spaces": 2,
   "generator-cli": {
-    "version": "4.3.1"
+    "version": "5.0.0-beta2",
+    "generators": {
+      "playground-api": {
+        "generatorName": "typescript-angular",
+        "output": "#{cwd}/build/playground-api",
+        "glob": "../resources/static/api.yaml",
+        "additionalProperties": {
+          "apiModulePrefix": "Playground"
+        }
+      },
+      "camunda-api": {
+        "generatorName": "typescript-angular",
+        "output": "#{cwd}/build/camunda-api",
+        "glob": "../../../target/classes/static/camunda-openapi.json",
+        "additionalProperties": {
+          "apiModulePrefix": "Camunda"
+        }
+      }
+    }
   }
 }

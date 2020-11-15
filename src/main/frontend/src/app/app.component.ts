@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
 import { FormControl } from '@angular/forms';
 
-import { ThingService } from 'build/openapi/api/thing.service';
+import { ThingService } from 'build/playground-api/api/thing.service';
+import { TaskService } from 'build/camunda-api/api/task.service';
 
 @Component({
   selector: 'app-root',
@@ -14,16 +15,16 @@ export class AppComponent {
   $sites = [
     { name: 'API', link: '/webjars/swagger-ui/index.html?url=/api.yaml' },
     { name: 'Camunda', link: '/camunda/app/cockpit/' },
-    { name: 'Camunda API', link: '/camunda/rest/engine' },
+    { name: 'Camunda API', link: '/engine-rest/incident' },
     { name: 'DB', link: '/h2-console' }
   ];
 
   newThingName = new FormControl('');
 
   $things = this.thingService.getThings();
-  $tasks = [];
+  $tasks = this.taskService.getTasks();
 
-  constructor(private readonly thingService: ThingService) { }
+  constructor(private readonly thingService: ThingService, private readonly taskService: TaskService) { }
 
   public createNewThing() {
     this.thingService.createThing({ id: 0, name: this.newThingName.value }).subscribe(() => {
