@@ -20,7 +20,7 @@
 
 	<!-- docker, xslfo, cxf, saxon? -->
 	<!-- liberty, groovy, hawt, oauth -->
-	<!-- greenmail -->
+	<!-- greenmail, spring-boot-admin -->
 
 	<dependencyManagement>
 		<dependencies>
