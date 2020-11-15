@@ -15,12 +15,12 @@ jobs:
     - name: Cache Maven Repo
       uses: actions/cache@v2
       with:
-        path: ~/.m2
+        path: ~/.m2/repository
         key: ${{ runner.os }}-m2-${{ hashFiles('**/pom.xml') }}
     - name: Cache Node
       uses: actions/cache@v2
       with:
-        path: ${{ github.workspace }}/src/main/frontend/node_modules
-        key: ${{ runner.os }}-node-${{ hashFiles('src/main/frontend/package-lock.json') }}
+        path: ~/.npm
+        key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
     - name: Build with Maven
       run: mvn -B spring-boot:build-image --file pom.xml -Dspring-boot.build-image.docker.publishRegistry.username=${{ secrets.DOCKERHUB_USERNAME }} -Dspring-boot.build-image.docker.publishRegistry.password=${{ secrets.DOCKERHUB_TOKEN }} -Dspring-boot.build-image.imageName=apinske/playground-java -Dspring-boot.build-image.publish=true
