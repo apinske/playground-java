@@ -38,5 +38,7 @@ jobs:
       with:
         username: ${{ secrets.DOCKERHUB_USERNAME }}
         password: ${{ secrets.DOCKERHUB_TOKEN }}
+    - name: Tag Docker image
+      run: docker tag playground-java:0.1-SNAPSHOT apinske/playground-java
     - name: Push Docker image
-      run: docker push playground-java
+      run: docker push apinske/playground-java
