@@ -93,6 +93,16 @@ paths:
               $ref: '#/components/schemas/thing'
         description: updated thing
         required: true
+    delete:
+      description: deletes the thing with the specified id
+      tags:
+      - thing
+      operationId: deleteThing
+      responses:
+        200:
+          description: ok
+        500:
+          $ref: '#/components/responses/Error'
 components:
   responses:
     Error:

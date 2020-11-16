@@ -32,4 +32,10 @@ export class AppComponent {
     });
     this.newThingName.setValue('');
   }
+
+  public deleteThing(id: number) {
+    this.thingService.deleteThing(id).subscribe(() => {
+      this.$things = this.thingService.getThings();
+    });
+  }
 }

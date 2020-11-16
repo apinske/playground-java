@@ -54,6 +54,12 @@ public class ThingApiController implements ThingApi {
 		return ResponseEntity.ok().build();
 	}
 
+	@Override
+	public ResponseEntity<Void> deleteThing(Long id) {
+		thingRepository.deleteById(id);
+		return ResponseEntity.ok().build();
+	}
+
 	private ThingDto map(Thing t) {
 		return new ThingDto().id(t.getId()).name(t.getName());
 	}
