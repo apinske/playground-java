@@ -1,33 +1,30 @@
-<nav class="navbar navbar-expand-sm fixed-top navbar-light bg-light">
-	<a class="navbar-brand" href="/">Playground</a>
-	<ul class=" nav navbar-nav">
-		<li *ngFor="let site of $sites" class="nav-item">
-			<a class="nav-link" href={{site.link}}>{{site.name}}</a>
-		</li>
-	</ul>
-</nav>
-<div class="container-fluid">
-	<div class="row">
-		<div class="col-2">
-			<div>
-				<ul>
-					<li><i class="fas fa-inbox"></i></li>
-					<li *ngFor="let task of $tasks | async">
-						<span>{{task.name}}</span>
-					</li>
-					<li *ngFor="let thing of $things | async">
-						<span>{{thing.name}}</span>
-					</li>
-					<li><i>{{newThingName.value}}</i></li>
-				</ul>
-				<input type="text" [formControl]="newThingName">
-				<button (click)="createNewThing()">Save</button>
-			</div>
-		</div>
-	</div>
-</div>
-<footer class="footer">
-	<div class="container-fluid my-2">
-		<span class="text-muted">Playground version - user</span>
-	</div>
-</footer>
+<mat-toolbar>
+	<span>Playground</span>
+	<a mat-button *ngFor="let site of $sites" href={{site.link}}>{{site.name}}</a>
+</mat-toolbar>
+
+<h1>Tasks</h1>
+<mat-list>
+	<mat-list-item *ngFor="let task of $tasks | async">{{task.name}}</mat-list-item>
+</mat-list>
+
+<h1>Things</h1>
+<mat-list>
+	<mat-list-item *ngFor="let thing of $things | async">
+		<mat-icon-button (click)="deleteThing(thing.id)">
+			<mat-icon>delete</mat-icon>
+		</mat-icon-button>
+		{{thing.name}}
+	</mat-list-item>
+	<mat-list-item>
+		<mat-form-field>
+			<mat-label>New Thing</mat-label>
+			<input matInput type="text" [formControl]="newThingName">
+		</mat-form-field>
+		<button (click)="createNewThing()">Save</button>
+	</mat-list-item>
+</mat-list>
+
+<mat-toolbar>
+	<span>Playground version - user</span>
+</mat-toolbar>
