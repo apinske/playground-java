@@ -23,7 +23,7 @@
     "@fortawesome/fontawesome-svg-core": "^1.2.32",
     "@fortawesome/free-regular-svg-icons": "^5.15.1",
     "@fortawesome/free-solid-svg-icons": "^5.15.1",
-    "@openapitools/openapi-generator-cli": "^2.1.4",
+    "@openapitools/openapi-generator-cli": "^2.1.5",
     "bootstrap": "^4.5.3",
     "jquery": "^3.5.1",
     "rxjs": "~6.6.0",
