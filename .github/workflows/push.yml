@@ -13,12 +13,12 @@ jobs:
       with:
         java-version: 11
     - name: Cache Maven Repo
-      uses: actions/cache@v2
+      uses: actions/cache@v2.1.4
       with:
         path: ~/.m2/repository
         key: ${{ runner.os }}-m2-${{ hashFiles('**/pom.xml') }}
     - name: Cache Node
-      uses: actions/cache@v2
+      uses: actions/cache@v2.1.4
       with:
         path: ~/.npm
         key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
