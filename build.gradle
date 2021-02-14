@@ -1,7 +1,7 @@
 plugins {
-	id 'org.springframework.boot' version '2.4.2'
-	id 'io.spring.dependency-management' version '1.0.11.RELEASE'
-	id 'java'
+    id 'org.springframework.boot' version '2.4.2'
+    id 'io.spring.dependency-management' version '1.0.11.RELEASE'
+    id 'java'
     id 'org.openapi.generator' version '5.0.1'
     id 'org.siouan.frontend-jdk11' version '5.0.0'
 }
@@ -11,7 +11,7 @@ version = '0.1-SNAPSHOT'
 sourceCompatibility = '11'
 
 repositories {
-	mavenCentral()
+    mavenCentral()
 }
 
 dependencies {
@@ -22,8 +22,8 @@ dependencies {
     developmentOnly 'org.springframework.boot:spring-boot-devtools'
 
     implementation 'org.liquibase:liquibase-core'
-	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
-	implementation 'org.springframework.boot:spring-boot-starter-web'
+    implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+    implementation 'org.springframework.boot:spring-boot-starter-web'
 
     implementation 'org.webjars:swagger-ui:3.43.0'
     implementation 'org.webjars:webjars-locator-core'
@@ -45,7 +45,7 @@ dependencies {
     compileOnly 'io.springfox:springfox-core:3.0.0'
 
     runtimeOnly 'com.h2database:h2'
-	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
     testImplementation 'com.jayway.jsonpath:json-path-assert'
     testImplementation 'org.camunda.bpm.assert:camunda-bpm-assert:8.0.0'
 }
@@ -83,5 +83,5 @@ task processFrontendResources(type: Copy) {
 processResources.dependsOn processFrontendResources
 
 test {
-	useJUnitPlatform()
+    useJUnitPlatform()
 }
