@@ -1,0 +1,87 @@
+plugins {
+	id 'org.springframework.boot' version '2.4.2'
+	id 'io.spring.dependency-management' version '1.0.11.RELEASE'
+	id 'java'
+    id 'org.openapi.generator' version '5.0.1'
+    id 'org.siouan.frontend-jdk11' version '5.0.0'
+}
+
+group = 'eu.pinske.playground'
+version = '0.1-SNAPSHOT'
+sourceCompatibility = '11'
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+    implementation platform('org.camunda.bpm:camunda-bom:7.14.0')
+
+    implementation 'org.springframework.boot:spring-boot-starter-actuator'
+    implementation 'org.jolokia:jolokia-core'
+    developmentOnly 'org.springframework.boot:spring-boot-devtools'
+
+    implementation 'org.liquibase:liquibase-core'
+	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+
+    implementation 'org.webjars:swagger-ui:3.43.0'
+    implementation 'org.webjars:webjars-locator-core'
+
+    implementation 'org.camunda.bpm.springboot:camunda-bpm-spring-boot-starter-webapp'
+    implementation 'org.camunda.bpm.springboot:camunda-bpm-spring-boot-starter-rest'
+    implementation 'org.camunda.bpm.identity:camunda-identity-ldap'
+    implementation 'org.camunda.bpm:camunda-engine-plugin-spin'
+    implementation 'org.camunda.spin:camunda-spin-dataformat-json-jackson'
+
+    implementation 'me.snowdrop:narayana-spring-boot-starter:2.5.1'
+
+    implementation 'org.apache.commons:commons-lang3'
+    implementation 'org.apache.commons:commons-math3:3.6.1'
+    implementation 'org.jfree:jfreechart:1.5.2'
+
+    compileOnly 'io.swagger:swagger-annotations:1.6.2'
+    compileOnly 'org.openapitools:jackson-databind-nullable:0.2.1'
+    compileOnly 'io.springfox:springfox-core:3.0.0'
+
+    runtimeOnly 'com.h2database:h2'
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    testImplementation 'com.jayway.jsonpath:json-path-assert'
+    testImplementation 'org.camunda.bpm.assert:camunda-bpm-assert:8.0.0'
+}
+
+openApiGenerate {
+    generatorName = 'spring'
+    library = 'spring-mvc'
+    inputSpec = "$rootDir/src/main/resources/static/api.yaml".toString()
+    outputDir = "$buildDir/generated".toString()
+    modelPackage = 'eu.pinske.playground.web.api.model'
+    modelNameSuffix = 'Dto'
+    apiPackage = 'eu.pinske.playground.web.api'
+    additionalProperties = [
+        useBeanValidation: 'false',
+        booleanGetterPrefix: 'is',
+        interfaceOnly: 'true',
+        skipDefaultInterface: 'true'
+    ]
+}
+compileJava.dependsOn tasks.openApiGenerate
+sourceSets.main.java.srcDirs = ['build/generated/src/main/java', 'src/main/java']
+
+frontend {
+    nodeVersion = '14.15.5'
+    nodeInstallDirectory = file('src/main/frontend/node')
+    packageJsonDirectory = file('src/main/frontend')
+    assembleScript = 'run build'
+}
+
+task processFrontendResources(type: Copy) {
+    dependsOn assembleFrontend
+    from file("src/main/frontend/dist/playground-angular")
+    into file("${project.buildDir}/resources/static")
+}
+processResources.dependsOn processFrontendResources
+
+test {
+	useJUnitPlatform()
+}
