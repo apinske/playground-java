@@ -1,3 +1,4 @@
 #!/bin/sh
-PATH="$PWD/node/":$PATH
-node "node/node_modules/npm/bin/npm-cli.js" "$@"
+NODEJS_HOME=$PWD/node
+PATH="$NODEJS_HOME/bin":$PATH
+npm "$@"

@@ -3,11 +3,12 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "generate:api": "node node_modules/@openapitools/openapi-generator-cli/main.js generate",
+    "generate:api": "openapi-generator-cli generate",
     "prestart": "npm run generate:api",
     "start": "ng serve",
-    "prebuild": "npm run generate:api",
-    "build": "ng build"
+    "prebuild": "JAVA_OPTS=-Dlog.level=warn npm run generate:api",
+    "build": "ng build",
+    "clean": "rm -rf build dist"
   },
   "private": true,
   "dependencies": {

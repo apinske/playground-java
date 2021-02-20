@@ -199,7 +199,7 @@
 								</artifactItem>
 							</artifactItems>
 							<includes>openapi.json</includes>
-							<outputDirectory>${project.build.outputDirectory}/static</outputDirectory>
+							<outputDirectory>src/main/frontend/build</outputDirectory>
 						</configuration>
 					</execution>
 				</executions>

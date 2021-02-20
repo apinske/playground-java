@@ -15,7 +15,7 @@
       "camunda-api": {
         "generatorName": "typescript-angular",
         "output": "#{cwd}/build/camunda-api",
-        "glob": "../../../target/classes/static/camunda-openapi.json",
+        "glob": "build/camunda-openapi.json",
         "additionalProperties": {
           "apiModulePrefix": "Camunda"
         }

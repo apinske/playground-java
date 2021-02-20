@@ -14,6 +14,10 @@ repositories {
     mavenCentral()
 }
 
+configurations {
+   camundaApi { transitive = false } 
+} 
+
 dependencies {
     implementation platform('org.camunda.bpm:camunda-bom:7.14.0')
 
@@ -33,6 +37,7 @@ dependencies {
     implementation 'org.camunda.bpm.identity:camunda-identity-ldap'
     implementation 'org.camunda.bpm:camunda-engine-plugin-spin'
     implementation 'org.camunda.spin:camunda-spin-dataformat-json-jackson'
+    camundaApi     'org.camunda.bpm:camunda-engine-rest-openapi:7.14.0'
 
     implementation 'me.snowdrop:narayana-spring-boot-starter:2.5.2'
 
@@ -66,19 +71,29 @@ openApiGenerate {
     ]
 }
 compileJava.dependsOn tasks.openApiGenerate
-sourceSets.main.java.srcDirs = ['build/generated/src/main/java', 'src/main/java']
+sourceSets.main.java.srcDirs += ['build/generated/src/main/java']
+
+task unpackCamundaApi(type: Copy) {
+   from zipTree(configurations.camundaApi.singleFile).matching {
+      include 'openapi.json'
+      rename 'openapi.json', 'camunda-openapi.json'
+   }
+   into "src/main/frontend/build" 
+}
 
 frontend {
     nodeVersion = '14.15.5'
     nodeInstallDirectory = file('src/main/frontend/node')
     packageJsonDirectory = file('src/main/frontend')
     assembleScript = 'run build'
+    cleanScript = 'run clean'
 }
+assembleFrontend.dependsOn unpackCamundaApi
 
 task processFrontendResources(type: Copy) {
     dependsOn assembleFrontend
     from file("src/main/frontend/dist/playground-angular")
-    into file("${project.buildDir}/resources/static")
+    into file("${project.buildDir}/resources/main/static")
 }
 processResources.dependsOn processFrontendResources
 
