@@ -4,7 +4,7 @@ info:
   version: 1.0.0
   title: playground
 servers:
-- url:  /playground-api
+- url: /playground-api
 security:
 - basic: [
     ]
@@ -103,6 +103,60 @@ paths:
           description: ok
         500:
           $ref: '#/components/responses/Error'
+  /thing/{id}/data:
+    parameters:
+    - name: id
+      in: path
+      description: id of the requested thing
+      required: true
+      schema:
+        type: integer
+        format: int64
+    get:
+      description: retrieves the data of the thing with the specified id
+      tags:
+      - thing
+      operationId: getThingData
+      responses:
+        200:
+          description: successful response, with a the saved data of the thing
+          content:
+            '*/*':
+              schema:
+                type: string
+                format: binary
+        404:
+          description: The requested thing was not found.
+        500:
+          $ref: '#/components/responses/Error'
+    put:
+      description: changes the data of the thing with the specified id
+      tags:
+      - thing
+      operationId: changeThingData
+      responses:
+        200:
+          description: ok
+        500:
+          $ref: '#/components/responses/Error'
+      requestBody:
+        content:
+          '*/*':
+            schema:
+              type: string
+              format: binary
+        description: updated thing
+        required: true
+    delete:
+      description: deletes the thing with the specified id
+      tags:
+      - thing
+      operationId: deleteThingData
+      responses:
+        200:
+          description: ok
+        500:
+          $ref: '#/components/responses/Error'
 components:
   responses:
     Error:
@@ -127,6 +181,8 @@ components:
           readOnly: true
         name:
           type: string
+        data:
+          type: boolean
     error:
       type: object
       properties:

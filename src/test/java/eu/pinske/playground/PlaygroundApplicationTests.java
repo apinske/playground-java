@@ -3,10 +3,13 @@ package eu.pinske.playground;
 import static org.hamcrest.Matchers.equalTo;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.put;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 import static org.springframework.test.web.servlet.setup.MockMvcBuilders.webAppContextSetup;
 
+import org.apache.commons.lang3.RandomUtils;
 import org.camunda.bpm.engine.RuntimeService;
 import org.hamcrest.Matchers;
 import org.junit.jupiter.api.Disabled;
@@ -40,6 +43,11 @@ class PlaygroundApplicationTests {
 				.andExpect(jsonPath("$[0].name").value("table")).andExpect(jsonPath("$[0].id").value(1));
 
 		mvc.perform(get("/playground-api/thing/1")).andExpect(status().isOk());
+
+		byte[] data = RandomUtils.nextBytes(1024);
+		mvc.perform(put("/playground-api/thing/1/data").contentType(MediaType.APPLICATION_OCTET_STREAM).content(data))
+				.andExpect(status().isOk());
+		mvc.perform(get("/playground-api/thing/1/data")).andExpect(content().bytes(data));
 	}
 
 	@Test

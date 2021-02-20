@@ -1,21 +1,24 @@
 databaseChangeLog:
-  - include:
-      file: /org/camunda/bpm/engine/db/create/activiti.h2.create.identity.sql
-  - include:
-      file: /org/camunda/bpm/engine/db/create/activiti.h2.create.engine.sql
-  - include:
-      file: /org/camunda/bpm/engine/db/create/activiti.h2.create.history.sql
-  - include:
-      file: /org/camunda/bpm/engine/db/create/activiti.h2.create.case.engine.sql
-  - include:
-      file: /org/camunda/bpm/engine/db/create/activiti.h2.create.case.history.sql
-  - include:
-      file: /org/camunda/bpm/engine/db/create/activiti.h2.create.decision.engine.sql
-  - include:
-      file: /org/camunda/bpm/engine/db/create/activiti.h2.create.decision.history.sql
-  - include:
-      relativeToChangelogFile: true
-      file: db.changelog-0001.sql
-  - include:
-      relativeToChangelogFile: true
-      file: db.changelog-0002.sql
+- include:
+    file: /org/camunda/bpm/engine/db/create/activiti.h2.create.identity.sql
+- include:
+    file: /org/camunda/bpm/engine/db/create/activiti.h2.create.engine.sql
+- include:
+    file: /org/camunda/bpm/engine/db/create/activiti.h2.create.history.sql
+- include:
+    file: /org/camunda/bpm/engine/db/create/activiti.h2.create.case.engine.sql
+- include:
+    file: /org/camunda/bpm/engine/db/create/activiti.h2.create.case.history.sql
+- include:
+    file: /org/camunda/bpm/engine/db/create/activiti.h2.create.decision.engine.sql
+- include:
+    file: /org/camunda/bpm/engine/db/create/activiti.h2.create.decision.history.sql
+- include:
+    relativeToChangelogFile: true
+    file: db.changelog-0001.sql
+- include:
+    relativeToChangelogFile: true
+    file: db.changelog-0002.sql
+- include:
+    relativeToChangelogFile: true
+    file: db.changelog-0003.sql

@@ -15,6 +15,9 @@
 			<mat-icon>delete</mat-icon>
 		</mat-icon-button>
 		{{thing.name}}
+		<mat-icon-button *ngIf="thing.data">
+			<mat-icon>attach_file</mat-icon>
+		</mat-icon-button>
 	</mat-list-item>
 	<mat-list-item>
 		<mat-form-field>
