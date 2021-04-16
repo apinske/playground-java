@@ -121,12 +121,6 @@
 			<scope>provided</scope>
 		</dependency>
 		<dependency>
-			<groupId>org.openapitools</groupId>
-			<artifactId>jackson-databind-nullable</artifactId>
-			<version>0.2.1</version>
-			<scope>provided</scope>
-		</dependency>
-		<dependency>
 			<groupId>io.springfox</groupId>
 			<artifactId>springfox-core</artifactId>
 			<version>3.0.0</version>
@@ -222,12 +216,13 @@
 							<modelNameSuffix>Dto</modelNameSuffix>
 							<apiPackage>eu.pinske.playground.web.api</apiPackage>
 							<generateSupportingFiles>false</generateSupportingFiles>
-							<additionalProperties>
-								<additionalProperty>useBeanValidation=false</additionalProperty>
-								<additionalProperty>booleanGetterPrefix=is</additionalProperty>
-								<additionalProperty>interfaceOnly=true</additionalProperty>
-								<additionalProperty>skipDefaultInterface=true</additionalProperty>
-							</additionalProperties>
+							<configOptions>
+								<useBeanValidation>false</useBeanValidation>
+								<booleanGetterPrefix>is</booleanGetterPrefix>
+								<interfaceOnly>true</interfaceOnly>
+								<skipDefaultInterface>true</skipDefaultInterface>
+								<openApiNullable>false</openApiNullable>
+							</configOptions>
 						</configuration>
 					</execution>
 				</executions>
