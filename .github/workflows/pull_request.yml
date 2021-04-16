@@ -44,7 +44,7 @@ jobs:
         path: ~/.npm
         key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
     - name: Build with Gradle
-      run: gradle -b build.gradle build
+      run: ./gradlew -b build.gradle build
     - name: Cleanup Gradle Cache
       run: |
         rm -f ~/.gradle/caches/modules-2/modules-2.lock
