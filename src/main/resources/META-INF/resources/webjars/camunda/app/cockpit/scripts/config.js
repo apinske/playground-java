@@ -16,28 +16,42 @@
  */
 
 export default {
+  // // change the app name and vendor
+  // app: {
+  //   name: 'Operations',
+  //   vendor: 'Company'
+  // },
   // customScripts: [
   //   // If you have a folder called 'my-custom-script' (in the 'cockpit' folder)
   //   // with a file called 'customScript.js' in it
   //   // 'my-custom-script/customScript'
   // ],
-  locales: {
-    availableLocales: ['en', 'de'],
-    fallbackLocale: 'en'
-  },
-  // csrfCookieName: 'XSRF-TOKEN',
-  // bpmnJs: {
-  //   additionalModules: [
-  //     // If you have a folder called 'my-custom-module' (in the 'cockpit' folder)
-  //     // with a file called 'module.js' in it
-  //     // 'my-custom-module/module'
-  //   ],
-  //   moddleExtensions: {
-  //     // If you have a folder called 'my-custom-moddle' (in the 'cockpit' folder)
-  //     // with a file called 'camunda.json' in it defining the 'camunda' moddle extension
-  //     // camunda: 'my-custom-moddle/camunda'
+  // requireJsConfig: {
+  //   // AngularJS module names
+  //   ngDeps: ['ui.bootstrap'],
+  //   // RequireJS configuration for a complete configuration documentation see:
+  //   // http://requirejs.org/docs/api.html#config
+  //   deps: ['jquery', 'custom-ui'],
+  //   paths: {
+  //     // if you have a folder called `custom-ui` (in the `cockpit` folder)
+  //     // with a file called `scripts.js` in it and defining the `custom-ui` AMD module
+  //     'custom-ui': 'custom-ui/scripts'
   //   }
   // },
+  // historicActivityInstanceMetrics: {
+  //   adjustablePeriod: true,
+  //   //select from the default time period: day, week, month, complete
+  //   period: {
+  //     unit: 'week'
+  //   }
+  // },
+  // runtimeActivityInstanceMetrics: {
+  //   display: true
+  // },
+  'locales': {
+    'availableLocales': ['en', 'de'],
+    'fallbackLocale': 'en'
+  },
   // skipCustomListeners: {
   //   default: true,
   //   hidden: false
@@ -46,22 +60,25 @@ export default {
   //   default: true,
   //   hidden: false
   // },
-  // runtimeActivityInstanceMetrics: {
-  //   display: true
-  // },
-  // historicActivityInstanceMetrics: {
-  //   adjustablePeriod: true,
-  //   // Select from the default time period: day, week, month, complete
-  //   period: {
-  //     unit: 'week'
-  //   }
-  // },
-  // batchOperation: {
-  //   // Select mode of query for process instances or decision instances
+  // 'batchOperation' : {
+  //   // select mode of query for process instances or decision instances
   //   // possible values: filter, search
-  //   mode: 'filter',
-  //   // Select if Historic Batches should be loaded automatically when navigating to #/batch
-  //   autoLoadEnded: true
+  //   'mode': 'filter',
+  //
+  //   // select if Historic Batches should be loaded automatically when navigating to #/batch
+  //   'autoLoadEnded': true
+  // },
+  // bpmnJs: {
+  //   moddleExtensions: {
+  //     // if you have a folder called 'my-custom-moddle' (in the 'cockpit' folder)
+  //     // with a file called 'camunda.json' in it defining the 'camunda' moddle extension
+  //     camunda: 'my-custom-moddle/camunda'
+  //   },
+  //   additionalModules: [
+  //     // if you have a folder called 'my-custom-module' (in the 'cockpit' folder)
+  //     // with a file called 'module.js' in it
+  //     'my-custom-module/module'
+  //   ],
   // },
   // defaultFilter: {
   //   historicProcessDefinitionInstancesSearch: {
@@ -69,6 +86,8 @@ export default {
   //     event: 'started'
   //   }
   // },
+  // csrfCookieName: 'XSRF-TOKEN',
   // disableWelcomeMessage: false,
-  // userOperationLogAnnotationLength: 4000
+  // userOperationLogAnnotationLength: 5000,
+  // previewHtml: true
 };
