@@ -1,0 +1,43 @@
+##################################################          BASE #####
+
+dn: dc=pinske,dc=eu
+dc: pinske
+objectClass: domain
+
+dn: ou=users,dc=pinske,dc=eu
+ou: users
+objectClass: organizationalUnit
+
+dn: ou=groups,dc=pinske,dc=eu
+ou: groups
+objectClass: organizationalUnit
+
+##################################################         USERS #####
+
+dn: cn=apinske,ou=users,dc=pinske,dc=eu
+cn: apinske
+objectClass: inetOrgPerson
+givenName: Alexander
+sn: Pinske
+mail: apinske@local
+userPassword: 12345678
+
+##################################################   TECH. USERS #####
+
+dn: cn=srvusr,ou=users,dc=pinske,dc=eu
+cn: srvusr
+objectClass: person
+sn: Service-User (techn. User)
+userPassword: 12345678
+
+##################################################        GROUPS #####
+
+dn: cn=playground-user,ou=groups,dc=pinske,dc=eu
+cn: playground
+objectClass: groupOfNames
+member: cn=apinske,ou=users,dc=pinske,dc=eu
+
+dn: cn=playground-camunda-admin,ou=groups,dc=pinske,dc=eu
+cn: playground-camunda-admin
+objectClass: groupOfNames
+member: cn=apinske,ou=users,dc=pinske,dc=eu

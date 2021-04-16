@@ -1,18 +1,70 @@
 databaseChangeLog:
-- include:
-    file: /org/camunda/bpm/engine/db/create/activiti.h2.create.identity.sql
-- include:
-    file: /org/camunda/bpm/engine/db/create/activiti.h2.create.engine.sql
-- include:
-    file: /org/camunda/bpm/engine/db/create/activiti.h2.create.history.sql
-- include:
-    file: /org/camunda/bpm/engine/db/create/activiti.h2.create.case.engine.sql
-- include:
-    file: /org/camunda/bpm/engine/db/create/activiti.h2.create.case.history.sql
-- include:
-    file: /org/camunda/bpm/engine/db/create/activiti.h2.create.decision.engine.sql
-- include:
-    file: /org/camunda/bpm/engine/db/create/activiti.h2.create.decision.history.sql
+- changeSet:
+    id: camunda-process-engine
+    author: camunda
+    validCheckSum: any
+    changes:
+    - sqlFile:
+        dbms: db2
+        path: /org/camunda/bpm/engine/db/create/activiti.db2.create.engine.sql
+    - sqlFile:
+        dbms: h2
+        path: /org/camunda/bpm/engine/db/create/activiti.h2.create.engine.sql
+- changeSet:
+    id: camunda-process-history
+    author: camunda
+    validCheckSum: any
+    changes:
+    - sqlFile:
+        dbms: db2
+        path: /org/camunda/bpm/engine/db/create/activiti.db2.create.history.sql
+    - sqlFile:
+        dbms: h2
+        path: /org/camunda/bpm/engine/db/create/activiti.h2.create.history.sql
+- changeSet:
+    id: camunda-case-engine
+    author: camunda
+    validCheckSum: any
+    changes:
+    - sqlFile:
+        dbms: db2
+        path: /org/camunda/bpm/engine/db/create/activiti.db2.create.case.engine.sql
+    - sqlFile:
+        dbms: h2
+        path: /org/camunda/bpm/engine/db/create/activiti.h2.create.case.engine.sql
+- changeSet:
+    id: camunda-case-history
+    author: camunda
+    validCheckSum: any
+    changes:
+    - sqlFile:
+        dbms: db2
+        path: /org/camunda/bpm/engine/db/create/activiti.db2.create.case.history.sql
+    - sqlFile:
+        dbms: h2
+        path: /org/camunda/bpm/engine/db/create/activiti.h2.create.case.history.sql
+- changeSet:
+    id: camunda-decision-engine
+    author: camunda
+    validCheckSum: any
+    changes:
+    - sqlFile:
+        dbms: db2
+        path: /org/camunda/bpm/engine/db/create/activiti.db2.create.decision.engine.sql
+    - sqlFile:
+        dbms: h2
+        path: /org/camunda/bpm/engine/db/create/activiti.h2.create.decision.engine.sql
+- changeSet:
+    id: camunda-decision-history
+    author: camunda
+    validCheckSum: any
+    changes:
+    - sqlFile:
+        dbms: db2
+        path: /org/camunda/bpm/engine/db/create/activiti.db2.create.decision.history.sql
+    - sqlFile:
+        dbms: h2
+        path: /org/camunda/bpm/engine/db/create/activiti.h2.create.decision.history.sql
 - include:
     relativeToChangelogFile: true
     file: db.changelog-0001.sql
@@ -22,3 +74,19 @@ databaseChangeLog:
 - include:
     relativeToChangelogFile: true
     file: db.changelog-0003.sql
+- changeSet:
+    id: camunda-update-7.14-to-7.15
+    author: camunda
+    validCheckSum: any
+    preConditions:
+    - onFail: MARK_RAN
+    - sqlCheck:
+        expectedResult: 7.14.0
+        sql: SELECT VERSION_ FROM ACT_GE_SCHEMA_LOG WHERE ID_ = (SELECT MAX(ID_) FROM ACT_GE_SCHEMA_LOG)
+    changes:
+    - sqlFile:
+        dbms: db2
+        path: /org/camunda/bpm/engine/db/upgrade/db2_engine_7.14_to_7.15.sql
+    - sqlFile:
+        dbms: h2
+        path: /org/camunda/bpm/engine/db/upgrade/h2_engine_7.14_to_7.15.sql
