@@ -24,7 +24,7 @@
     "@angular/router": "^11.0.2",
     "@openapitools/openapi-generator-cli": "^2.2.5",
     "rxjs": "~6.6.6",
-    "tslib": "^2.1.0",
+    "tslib": "^2.2.0",
     "zone.js": "~0.10.2"
   },
   "devDependencies": {
