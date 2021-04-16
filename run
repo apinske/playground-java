@@ -1,2 +1,3 @@
-mvn clean install -DskipTests
-java -jar target/playground.jar
+#!/bin/sh
+mvn clean package -DskipTests -Dskip.frontend=true
+java -jar target/playground.jar $@
