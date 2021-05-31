@@ -3,7 +3,7 @@ plugins {
     id 'io.spring.dependency-management' version '1.0.11.RELEASE'
     id 'java'
     id 'org.openapi.generator' version '5.1.0'
-    id 'org.siouan.frontend-jdk11' version '5.1.0'
+    id 'org.siouan.frontend-jdk11' version '5.2.0'
 }
 
 group = 'eu.pinske.playground'
