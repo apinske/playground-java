@@ -48,8 +48,7 @@ dependencies {
     implementation 'org.jfree:jfreechart:1.5.3'
 
     compileOnly 'io.swagger:swagger-annotations:1.6.2'
-    compileOnly 'org.openapitools:jackson-databind-nullable:0.2.1'
-    compileOnly 'io.springfox:springfox-core:3.0.0'
+    compileOnly 'io.springfox:springfox-core:3.0.0', { exclude group: '*', module: '*' }
 
     runtimeOnly 'com.h2database:h2'
     runtimeOnly 'com.unboundid:unboundid-ldapsdk'
@@ -71,7 +70,8 @@ openApiGenerate {
         useBeanValidation: 'false',
         booleanGetterPrefix: 'is',
         interfaceOnly: 'true',
-        skipDefaultInterface: 'true'
+        skipDefaultInterface: 'true',
+        openApiNullable: 'false'
     ]
 }
 compileJava.dependsOn tasks.openApiGenerate
