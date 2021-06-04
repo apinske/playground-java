@@ -11,6 +11,20 @@
 		736B2C3D266AD9FC006BC8FA /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 736B2C3C266AD9FC006BC8FA /* ContentView.swift */; };
 		736B2C3F266AD9FE006BC8FA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 736B2C3E266AD9FE006BC8FA /* Assets.xcassets */; };
 		736B2C42266AD9FE006BC8FA /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 736B2C41266AD9FE006BC8FA /* Preview Assets.xcassets */; };
+		736B2C62266AE08C006BC8FA /* APIHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 736B2C52266AE08C006BC8FA /* APIHelper.swift */; };
+		736B2C63266AE08C006BC8FA /* URLSessionImplementations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 736B2C53266AE08C006BC8FA /* URLSessionImplementations.swift */; };
+		736B2C64266AE08C006BC8FA /* ThingAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 736B2C55266AE08C006BC8FA /* ThingAPI.swift */; };
+		736B2C65266AE08C006BC8FA /* CodableHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 736B2C56266AE08C006BC8FA /* CodableHelper.swift */; };
+		736B2C66266AE08C006BC8FA /* APIs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 736B2C57266AE08C006BC8FA /* APIs.swift */; };
+		736B2C67266AE08C006BC8FA /* OpenISO8601DateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 736B2C58266AE08C006BC8FA /* OpenISO8601DateFormatter.swift */; };
+		736B2C68266AE08C006BC8FA /* Thing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 736B2C5A266AE08C006BC8FA /* Thing.swift */; };
+		736B2C69266AE08C006BC8FA /* ModelError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 736B2C5B266AE08C006BC8FA /* ModelError.swift */; };
+		736B2C6A266AE08C006BC8FA /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 736B2C5C266AE08C006BC8FA /* Extensions.swift */; };
+		736B2C6B266AE08C006BC8FA /* JSONDataEncoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 736B2C5D266AE08C006BC8FA /* JSONDataEncoding.swift */; };
+		736B2C6C266AE08C006BC8FA /* JSONEncodingHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 736B2C5E266AE08C006BC8FA /* JSONEncodingHelper.swift */; };
+		736B2C6D266AE08C006BC8FA /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 736B2C5F266AE08C006BC8FA /* Models.swift */; };
+		736B2C6E266AE08C006BC8FA /* SynchronizedDictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 736B2C60266AE08C006BC8FA /* SynchronizedDictionary.swift */; };
+		736B2C6F266AE08C006BC8FA /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 736B2C61266AE08C006BC8FA /* Configuration.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +34,20 @@
 		736B2C3E266AD9FE006BC8FA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		736B2C41266AD9FE006BC8FA /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		736B2C43266AD9FE006BC8FA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		736B2C52266AE08C006BC8FA /* APIHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIHelper.swift; sourceTree = "<group>"; };
+		736B2C53266AE08C006BC8FA /* URLSessionImplementations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLSessionImplementations.swift; sourceTree = "<group>"; };
+		736B2C55266AE08C006BC8FA /* ThingAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThingAPI.swift; sourceTree = "<group>"; };
+		736B2C56266AE08C006BC8FA /* CodableHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CodableHelper.swift; sourceTree = "<group>"; };
+		736B2C57266AE08C006BC8FA /* APIs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIs.swift; sourceTree = "<group>"; };
+		736B2C58266AE08C006BC8FA /* OpenISO8601DateFormatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OpenISO8601DateFormatter.swift; sourceTree = "<group>"; };
+		736B2C5A266AE08C006BC8FA /* Thing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Thing.swift; sourceTree = "<group>"; };
+		736B2C5B266AE08C006BC8FA /* ModelError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModelError.swift; sourceTree = "<group>"; };
+		736B2C5C266AE08C006BC8FA /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		736B2C5D266AE08C006BC8FA /* JSONDataEncoding.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONDataEncoding.swift; sourceTree = "<group>"; };
+		736B2C5E266AE08C006BC8FA /* JSONEncodingHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONEncodingHelper.swift; sourceTree = "<group>"; };
+		736B2C5F266AE08C006BC8FA /* Models.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
+		736B2C60266AE08C006BC8FA /* SynchronizedDictionary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SynchronizedDictionary.swift; sourceTree = "<group>"; };
+		736B2C61266AE08C006BC8FA /* Configuration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Configuration.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,6 +80,7 @@
 		736B2C39266AD9FC006BC8FA /* PlaygroundMobile */ = {
 			isa = PBXGroup;
 			children = (
+				736B2C51266AE08C006BC8FA /* OpenAPIs */,
 				736B2C3A266AD9FC006BC8FA /* PlaygroundMobileApp.swift */,
 				736B2C3C266AD9FC006BC8FA /* ContentView.swift */,
 				736B2C3E266AD9FE006BC8FA /* Assets.xcassets */,
@@ -67,6 +96,44 @@
 				736B2C41266AD9FE006BC8FA /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		736B2C51266AE08C006BC8FA /* OpenAPIs */ = {
+			isa = PBXGroup;
+			children = (
+				736B2C52266AE08C006BC8FA /* APIHelper.swift */,
+				736B2C53266AE08C006BC8FA /* URLSessionImplementations.swift */,
+				736B2C54266AE08C006BC8FA /* APIs */,
+				736B2C56266AE08C006BC8FA /* CodableHelper.swift */,
+				736B2C57266AE08C006BC8FA /* APIs.swift */,
+				736B2C58266AE08C006BC8FA /* OpenISO8601DateFormatter.swift */,
+				736B2C59266AE08C006BC8FA /* Models */,
+				736B2C5C266AE08C006BC8FA /* Extensions.swift */,
+				736B2C5D266AE08C006BC8FA /* JSONDataEncoding.swift */,
+				736B2C5E266AE08C006BC8FA /* JSONEncodingHelper.swift */,
+				736B2C5F266AE08C006BC8FA /* Models.swift */,
+				736B2C60266AE08C006BC8FA /* SynchronizedDictionary.swift */,
+				736B2C61266AE08C006BC8FA /* Configuration.swift */,
+			);
+			name = OpenAPIs;
+			path = "../../../../../target/generated-sources/openapi/PlaygroundMobile/Classes/OpenAPIs";
+			sourceTree = "<group>";
+		};
+		736B2C54266AE08C006BC8FA /* APIs */ = {
+			isa = PBXGroup;
+			children = (
+				736B2C55266AE08C006BC8FA /* ThingAPI.swift */,
+			);
+			path = APIs;
+			sourceTree = "<group>";
+		};
+		736B2C59266AE08C006BC8FA /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				736B2C5A266AE08C006BC8FA /* Thing.swift */,
+				736B2C5B266AE08C006BC8FA /* ModelError.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -138,8 +205,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				736B2C62266AE08C006BC8FA /* APIHelper.swift in Sources */,
+				736B2C65266AE08C006BC8FA /* CodableHelper.swift in Sources */,
+				736B2C66266AE08C006BC8FA /* APIs.swift in Sources */,
 				736B2C3D266AD9FC006BC8FA /* ContentView.swift in Sources */,
+				736B2C69266AE08C006BC8FA /* ModelError.swift in Sources */,
+				736B2C67266AE08C006BC8FA /* OpenISO8601DateFormatter.swift in Sources */,
+				736B2C6A266AE08C006BC8FA /* Extensions.swift in Sources */,
+				736B2C6C266AE08C006BC8FA /* JSONEncodingHelper.swift in Sources */,
+				736B2C6D266AE08C006BC8FA /* Models.swift in Sources */,
+				736B2C6F266AE08C006BC8FA /* Configuration.swift in Sources */,
+				736B2C64266AE08C006BC8FA /* ThingAPI.swift in Sources */,
+				736B2C6B266AE08C006BC8FA /* JSONDataEncoding.swift in Sources */,
 				736B2C3B266AD9FC006BC8FA /* PlaygroundMobileApp.swift in Sources */,
+				736B2C6E266AE08C006BC8FA /* SynchronizedDictionary.swift in Sources */,
+				736B2C68266AE08C006BC8FA /* Thing.swift in Sources */,
+				736B2C63266AE08C006BC8FA /* URLSessionImplementations.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

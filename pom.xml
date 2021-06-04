@@ -239,6 +239,20 @@
 							</configOptions>
 						</configuration>
 					</execution>
+					<execution>
+						<id>playground-api-mobile</id>
+						<goals>
+							<goal>generate</goal>
+						</goals>
+						<configuration>
+							<generatorName>swift5</generatorName>
+							<inputSpec>${basedir}/src/main/resources/static/api.yaml</inputSpec>
+							<generateSupportingFiles>true</generateSupportingFiles>
+							<configOptions>
+								<projectName>PlaygroundMobile</projectName>
+							</configOptions>
+						</configuration>
+					</execution>
 				</executions>
 			</plugin>
 			<plugin>
