@@ -86,7 +86,7 @@ task unpackCamundaApi(type: Copy) {
 }
 
 frontend {
-    nodeVersion = '14.15.5'
+    nodeVersion = '14.17.0'
     nodeInstallDirectory = file('src/main/frontend/node')
     packageJsonDirectory = file('src/main/frontend')
     assembleScript = 'run build'

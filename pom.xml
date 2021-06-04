@@ -284,7 +284,7 @@
 				</executions>
 				<configuration>
 					<skip>${skip.frontend}</skip>
-					<nodeVersion>v14.15.5</nodeVersion>
+					<nodeVersion>v14.17.0</nodeVersion>
 					<installDirectory>src/main/frontend</installDirectory>
 					<workingDirectory>src/main/frontend</workingDirectory>
 				</configuration>
