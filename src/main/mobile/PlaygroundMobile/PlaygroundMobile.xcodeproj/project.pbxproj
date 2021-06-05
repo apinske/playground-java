@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		736B2C3B266AD9FC006BC8FA /* PlaygroundMobileApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 736B2C3A266AD9FC006BC8FA /* PlaygroundMobileApp.swift */; };
-		736B2C3D266AD9FC006BC8FA /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 736B2C3C266AD9FC006BC8FA /* ContentView.swift */; };
+		736B2C3D266AD9FC006BC8FA /* ThingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 736B2C3C266AD9FC006BC8FA /* ThingsView.swift */; };
 		736B2C3F266AD9FE006BC8FA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 736B2C3E266AD9FE006BC8FA /* Assets.xcassets */; };
 		736B2C42266AD9FE006BC8FA /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 736B2C41266AD9FE006BC8FA /* Preview Assets.xcassets */; };
 		736B2C62266AE08C006BC8FA /* APIHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 736B2C52266AE08C006BC8FA /* APIHelper.swift */; };
@@ -30,7 +30,7 @@
 /* Begin PBXFileReference section */
 		736B2C37266AD9FC006BC8FA /* PlaygroundMobile.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PlaygroundMobile.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		736B2C3A266AD9FC006BC8FA /* PlaygroundMobileApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaygroundMobileApp.swift; sourceTree = "<group>"; };
-		736B2C3C266AD9FC006BC8FA /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		736B2C3C266AD9FC006BC8FA /* ThingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThingsView.swift; sourceTree = "<group>"; };
 		736B2C3E266AD9FE006BC8FA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		736B2C41266AD9FE006BC8FA /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		736B2C43266AD9FE006BC8FA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -82,7 +82,7 @@
 			children = (
 				736B2C51266AE08C006BC8FA /* OpenAPIs */,
 				736B2C3A266AD9FC006BC8FA /* PlaygroundMobileApp.swift */,
-				736B2C3C266AD9FC006BC8FA /* ContentView.swift */,
+				736B2C3C266AD9FC006BC8FA /* ThingsView.swift */,
 				736B2C3E266AD9FE006BC8FA /* Assets.xcassets */,
 				736B2C43266AD9FE006BC8FA /* Info.plist */,
 				736B2C40266AD9FE006BC8FA /* Preview Content */,
@@ -208,7 +208,7 @@
 				736B2C62266AE08C006BC8FA /* APIHelper.swift in Sources */,
 				736B2C65266AE08C006BC8FA /* CodableHelper.swift in Sources */,
 				736B2C66266AE08C006BC8FA /* APIs.swift in Sources */,
-				736B2C3D266AD9FC006BC8FA /* ContentView.swift in Sources */,
+				736B2C3D266AD9FC006BC8FA /* ThingsView.swift in Sources */,
 				736B2C69266AE08C006BC8FA /* ModelError.swift in Sources */,
 				736B2C67266AE08C006BC8FA /* OpenISO8601DateFormatter.swift in Sources */,
 				736B2C6A266AE08C006BC8FA /* Extensions.swift in Sources */,

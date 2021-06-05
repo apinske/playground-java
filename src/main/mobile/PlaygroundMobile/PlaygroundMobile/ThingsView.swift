@@ -1,5 +1,5 @@
 //
-//  ContentView.swift
+//  ThingsView.swift
 //  PlaygroundMobile
 //
 //  Created by Alexander Pinske on 05.06.21.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct ContentView: View {
+struct ThingsView: View {
     @State var things = [Thing]()
     
     var body: some View {
@@ -21,8 +21,8 @@ struct ContentView: View {
     }
 }
 
-struct ContentView_Previews: PreviewProvider {
+struct ThingsView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        ThingsView()
     }
 }

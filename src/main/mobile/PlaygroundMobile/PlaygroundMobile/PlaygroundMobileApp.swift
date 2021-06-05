@@ -17,7 +17,7 @@ struct PlaygroundMobileApp: App {
     
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ThingsView()
         }
     }
 }
