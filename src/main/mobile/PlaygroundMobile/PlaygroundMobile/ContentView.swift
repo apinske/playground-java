@@ -8,9 +8,16 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State var things = [Thing]()
+    
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+        List(things, id: \.id) { thing in
+            Text(thing.name!)
+        }.onAppear {
+            ThingAPI.getThingsWithRequestBuilder().addCredential().execute { r in
+                try! things = r.get().body!
+            }
+        }
     }
 }
 
