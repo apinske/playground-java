@@ -311,4 +311,10 @@
 			</plugin>
 		</plugins>
 	</build>
+	<distributionManagement>
+		<repository>
+			<id>github</id>
+			<url>https://maven.pkg.github.com/apinske/playground-java</url>
+		</repository>
+	</distributionManagement>
 </project>
