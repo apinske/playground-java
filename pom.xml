@@ -9,7 +9,7 @@
 	</parent>
 	<groupId>eu.pinske.playground</groupId>
 	<artifactId>playground-java</artifactId>
-	<version>0.2-SNAPSHOT</version>
+	<version>0.2</version>
 	<name>playground</name>
 	<description>Playground</description>
 
@@ -313,7 +313,7 @@
 	</build>
 	<scm>
 		<developerConnection>scm:git:https://github.com/apinske/playground-java.git</developerConnection>
-		<tag>HEAD</tag>
+		<tag>playground-java-0.2</tag>
 	</scm>
 	<distributionManagement>
 		<repository>
