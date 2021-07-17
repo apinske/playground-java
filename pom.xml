@@ -311,6 +311,9 @@
 			</plugin>
 		</plugins>
 	</build>
+	<scm>
+		<developerConnection>scm:git:https://github.com/apinske/playground-java.git</developerConnection>
+	</scm>
 	<distributionManagement>
 		<repository>
 			<id>github</id>
