@@ -15,6 +15,7 @@
 
 	<properties>
 		<java.version>11</java.version>
+		<project.scm.id>github</project.scm.id>
 	</properties>
 
 	<!-- docker, xslfo, cxf, saxon? -->
