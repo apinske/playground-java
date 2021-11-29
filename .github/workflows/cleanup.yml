@@ -5,6 +5,6 @@ jobs:
   delete-artifacts:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/delete-package-versions@v1
+      - uses: actions/delete-package-versions@v2
         with:
           package-name: 'eu.pinske.playground.playground-java'
