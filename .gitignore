@@ -4,6 +4,7 @@ src/main/frontend/dist/
 src/main/frontend/build/
 target/
 build/
+bin/
 transaction-logs/
 .apt_generated
 .classpath
