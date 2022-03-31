@@ -90,3 +90,19 @@ databaseChangeLog:
     - sqlFile:
         dbms: h2
         path: /org/camunda/bpm/engine/db/upgrade/h2_engine_7.14_to_7.15.sql
+- changeSet:
+    id: camunda-update-7.15-to-7.16
+    author: camunda
+    validCheckSum: any
+    preConditions:
+    - onFail: MARK_RAN
+    - sqlCheck:
+        expectedResult: 7.15.0
+        sql: SELECT VERSION_ FROM ACT_GE_SCHEMA_LOG WHERE ID_ = (SELECT MAX(ID_) FROM ACT_GE_SCHEMA_LOG)
+    changes:
+    - sqlFile:
+        dbms: db2
+        path: /org/camunda/bpm/engine/db/upgrade/db2_engine_7.15_to_7.16.sql
+    - sqlFile:
+        dbms: h2
+        path: /org/camunda/bpm/engine/db/upgrade/h2_engine_7.15_to_7.16.sql

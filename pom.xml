@@ -27,7 +27,7 @@
 			<dependency>
 				<groupId>org.camunda.bpm</groupId>
 				<artifactId>camunda-bom</artifactId>
-				<version>7.15.0</version>
+				<version>7.16.0</version>
 				<type>pom</type>
 				<scope>import</scope>
 			</dependency>
@@ -165,7 +165,7 @@
 		<dependency>
 			<groupId>org.camunda.bpm.assert</groupId>
 			<artifactId>camunda-bpm-assert</artifactId>
-			<version>10.0.0</version>
+			<version>14.0.0</version>
 			<scope>test</scope>
 		</dependency>
 	</dependencies>
@@ -198,7 +198,7 @@
 								<artifactItem>
 									<groupId>org.camunda.bpm</groupId>
 									<artifactId>camunda-engine-rest-openapi</artifactId>
-									<version>7.15.0</version>
+									<version>7.16.0</version>
 									<fileMappers>
 										<org.codehaus.plexus.components.io.filemappers.PrefixFileMapper>
 											<prefix>camunda-</prefix>

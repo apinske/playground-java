@@ -19,7 +19,7 @@ configurations {
 } 
 
 dependencies {
-    implementation platform('org.camunda.bpm:camunda-bom:7.15.0')
+    implementation platform('org.camunda.bpm:camunda-bom:7.16.0')
 
     implementation 'org.springframework.boot:spring-boot-starter-actuator'
     implementation 'org.jolokia:jolokia-core'
@@ -39,7 +39,7 @@ dependencies {
     implementation 'org.camunda.bpm.identity:camunda-identity-ldap'
     implementation 'org.camunda.bpm:camunda-engine-plugin-spin'
     implementation 'org.camunda.spin:camunda-spin-dataformat-json-jackson'
-    camundaApi     'org.camunda.bpm:camunda-engine-rest-openapi:7.15.0'
+    camundaApi     'org.camunda.bpm:camunda-engine-rest-openapi:7.16.0'
 
     implementation 'me.snowdrop:narayana-spring-boot-starter:2.6.0'
 
@@ -55,7 +55,7 @@ dependencies {
 
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
     testImplementation 'com.jayway.jsonpath:json-path-assert'
-    testImplementation 'org.camunda.bpm.assert:camunda-bpm-assert:10.0.0'
+    testImplementation 'org.camunda.bpm.assert:camunda-bpm-assert:14.0.0'
 }
 
 openApiGenerate {
