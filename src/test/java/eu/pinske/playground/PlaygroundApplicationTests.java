@@ -24,37 +24,37 @@ import org.springframework.web.context.WebApplicationContext;
 @SpringBootTest
 class PlaygroundApplicationTests {
 
-	@Test
-	void contextLoads(@Autowired WebApplicationContext ctx, @Autowired JdbcTemplate jdbc) throws Exception {
-		MockMvc mvc = webAppContextSetup(ctx).build();
-		mvc.perform(
-				post("/playground-api/thing").contentType(MediaType.APPLICATION_JSON).content("{\"name\":\"table\"}"))
-				.andExpect(status().isOk());
-		mvc.perform(
-				post("/playground-api/thing").contentType(MediaType.APPLICATION_JSON).content("{\"name\":\"chair\"}"))
-				.andExpect(status().isOk());
+    @Test
+    void contextLoads(@Autowired WebApplicationContext ctx, @Autowired JdbcTemplate jdbc) throws Exception {
+        MockMvc mvc = webAppContextSetup(ctx).build();
+        mvc.perform(
+                post("/playground-api/thing").contentType(MediaType.APPLICATION_JSON).content("{\"name\":\"table\"}"))
+                .andExpect(status().isOk());
+        mvc.perform(
+                post("/playground-api/thing").contentType(MediaType.APPLICATION_JSON).content("{\"name\":\"chair\"}"))
+                .andExpect(status().isOk());
 
-		mvc.perform(get("/playground-api/thing")).andExpect(status().isOk()).andExpect(jsonPath("$").isArray())
-				.andExpect(jsonPath("$.length()").value(Matchers.greaterThanOrEqualTo(2)))
-				.andExpect(jsonPath("$[0].name", equalTo("table")));
+        mvc.perform(get("/playground-api/thing")).andExpect(status().isOk()).andExpect(jsonPath("$").isArray())
+                .andExpect(jsonPath("$.length()").value(Matchers.greaterThanOrEqualTo(2)))
+                .andExpect(jsonPath("$[0].name", equalTo("table")));
 
-		mvc.perform(get("/playground-api/thing?name={name}", "table")).andExpect(status().isOk())
-				.andExpect(jsonPath("$").isArray()).andExpect(jsonPath("$.length()").value(1))
-				.andExpect(jsonPath("$[0].name").value("table")).andExpect(jsonPath("$[0].id").value(1));
+        mvc.perform(get("/playground-api/thing?name={name}", "table")).andExpect(status().isOk())
+                .andExpect(jsonPath("$").isArray()).andExpect(jsonPath("$.length()").value(1))
+                .andExpect(jsonPath("$[0].name").value("table")).andExpect(jsonPath("$[0].id").value(1));
 
-		mvc.perform(get("/playground-api/thing/1")).andExpect(status().isOk());
+        mvc.perform(get("/playground-api/thing/1")).andExpect(status().isOk());
 
-		byte[] data = RandomUtils.nextBytes(1024);
-		mvc.perform(put("/playground-api/thing/1/data").contentType(MediaType.APPLICATION_OCTET_STREAM).content(data))
-				.andExpect(status().isOk());
-		mvc.perform(get("/playground-api/thing/1/data")).andExpect(content().bytes(data));
-	}
+        byte[] data = RandomUtils.nextBytes(1024);
+        mvc.perform(put("/playground-api/thing/1/data").contentType(MediaType.APPLICATION_OCTET_STREAM).content(data))
+                .andExpect(status().isOk());
+        mvc.perform(get("/playground-api/thing/1/data")).andExpect(content().bytes(data));
+    }
 
-	@Test
-	@Disabled
-	void camunda(@Autowired RuntimeService service) throws Exception {
-		service.startProcessInstanceByKey("Prozess");
-		Thread.sleep(10000);
-	}
+    @Test
+    @Disabled
+    void camunda(@Autowired RuntimeService service) throws Exception {
+        service.startProcessInstanceByKey("Prozess");
+        Thread.sleep(10000);
+    }
 
 }

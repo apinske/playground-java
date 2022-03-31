@@ -12,24 +12,24 @@ import eu.pinske.playground.model.Thing;
 
 @Component
 public class TaskDelegate implements JavaDelegate {
-	private static Logger log = LoggerFactory.getLogger(TaskDelegate.class);
+    private static Logger log = LoggerFactory.getLogger(TaskDelegate.class);
 
-	@Autowired
-	private ThingRepository thingRepository;
+    @Autowired
+    private ThingRepository thingRepository;
 
-	@Override
-	public void execute(DelegateExecution execution) throws Exception {
-		if (!execution.hasVariable("thing")) {
-			Thing thing = new Thing();
-			thing.setName("prozess");
-			thing = thingRepository.save(thing);
-			execution.setVariable("thing", thing);
-			log.info("created {}", thing);
-		} else {
-			log.info("accessing thing");
-			Thing thing = (Thing) execution.getVariable("thing");
-			log.info("found {}", thing);
-			thing.setName("prozess_ende");
-		}
-	}
+    @Override
+    public void execute(DelegateExecution execution) throws Exception {
+        if (!execution.hasVariable("thing")) {
+            Thing thing = new Thing();
+            thing.setName("prozess");
+            thing = thingRepository.save(thing);
+            execution.setVariable("thing", thing);
+            log.info("created {}", thing);
+        } else {
+            log.info("accessing thing");
+            Thing thing = (Thing) execution.getVariable("thing");
+            log.info("found {}", thing);
+            thing.setName("prozess_ende");
+        }
+    }
 }

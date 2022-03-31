@@ -8,5 +8,5 @@ import eu.pinske.playground.model.Thing;
 
 public interface ThingRepository extends JpaRepository<Thing, Long> {
 
-	List<Thing> findByName(String name);
+    List<Thing> findByName(String name);
 }
